@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 165 30% 3%;
+    --foreground: 160 20% 92%;
+    --card: 166 28% 5%;
+    --card-foreground: 160 20% 92%;
+    --popover: 166 28% 5%;
+    --popover-foreground: 160 20% 92%;
+    --primary: 160 84% 52%;
+    --primary-foreground: 165 45% 4%;
+    --secondary: 172 30% 10%;
+    --secondary-foreground: 160 25% 88%;
+    --muted: 170 22% 9%;
+    --muted-foreground: 165 12% 58%;
+    --accent: 172 55% 38%;
+    --accent-foreground: 160 30% 95%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 168 25% 14%;
+    --input: 168 25% 14%;
+    --ring: 160 84% 52%;
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: hsl(160 84% 52% / 0.28);
+    color: hsl(160 30% 96%);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(168 25% 18%);
+    border-radius: 9999px;
+    border: 2px solid hsl(165 30% 3%);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(168 25% 26%);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-emerald-300 via-teal-200 to-cyan-300 bg-clip-text text-transparent;
+  }
+
+  .grid-backdrop {
+    background-image:
+      linear-gradient(to right, hsl(168 40% 20% / 0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(168 40% 20% / 0.07) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+
+  .radial-fade {
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
+  }
+}

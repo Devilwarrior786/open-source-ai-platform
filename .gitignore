@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+
+# Local env files
+*.local
+
+# Convex
+.convex/
+
+# TypeScript build info
+tsconfig.tsbuildinfo
+
+# Editor / OS
+.DS_Store
+*.suo
+*.sw?
+
+# Logs
+logs/
+*.log
+npm-debug.log*
